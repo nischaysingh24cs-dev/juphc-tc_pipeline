@@ -1,97 +1,288 @@
-/* ==========================================================================
-   Portfolio Stylesheet - Grader Compliant
-   ========================================================================== */
-
-/* --- Base & Typography --- */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #1a1a1a; /* Dark background to make light text stand out */
-    color: #f8f9fa;
+/* General Reset & Typography */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* --- Name / Branding Styling --- */
-/* Satisfies CSS Criteria #1: Exact class, light color, and clear font size */
-.profile_name {
-    color: #f8f9fa;        /* Explicit light color */
-    font-size: 2.5rem;     /* Explicit appropriate font size */
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
-    transition: color 0.3s ease;
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 60px; /* Offset fixed header */
 }
 
-/* --- Navigation Bar Menu Styles --- */
-.topmenu {
-    background-color: #333;
-    padding: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.topmenu a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: all 0.2s ease;
-}
-
-/* --- Navigation Hover Effects --- */
-/* Satisfies CSS Criteria #2: Exact pseudo-selector with bold weight & underline */
-.topmenu a:hover,
-.topmenu:hover {
-    font-weight: bold;             /* Explicitly bold on hover */
-    text-decoration: underline;    /* Explicitly underlined on hover */
-    color: #0076ce;
-}
-
-/* --- Section Title Styling --- */
-.section-title {
-    font-size: 1.8rem;
-    color: #f8f9fa;
-    margin-top: 2rem;
-}
-
-/* --- Card Hover Effects (For Projects & Recommendations) --- */
-.project-card, .recommendation, .skill {
-    background: #2a2a2a;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Dynamic lift effect when hovering over cards */
-.project-card:hover, .recommendation:hover, .skill:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-}
-
-/* --- Popup Modal Layout --- */
-.popup-modal {
+/* Header & Name Styling */
+header {
+    background-color: #2c3e50;
+    color: white;
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    display: none; /* Controlled by JS via element.style.display */
-    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+header:hover {
+    background-color: #1a252f; /* Darken header on hover */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+/* Name (Logo) Styling with Hover Effect */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.logo:hover {
+    color: #1abc9c; /* Change color on hover */
+    transform: scale(1.05); /* Slight enlargement on hover */
+}
+
+/* Navigation Links & Hover Effects */
+nav ul {
+    display: flex;
+    list-style: none;
     align-items: center;
 }
 
-.popup-modal.active {
-    display: flex;
+nav ul li {
+    margin-left: 20px;
 }
 
-.popup-content {
-    background: #333;
-    padding: 30px;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #1abc9c; /* Accent color on hover */
+}
+
+/* Home Icon Hover Effect */
+.home-icon {
+    display: flex;
+    align-items: center;
+}
+
+.home-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.home-icon svg:hover {
+    fill: #1abc9c;
+    transform: rotate(-10deg) scale(1.1); /* Slight tilt and scale */
+}
+
+/* Section Layout & Titles */
+.section {
+    padding: 80px 20px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 3px solid #1abc9c;
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: border-color 0.3s ease;
+}
+
+.section-title:hover {
+    border-color: #e74c3c; /* Dynamic color shift on title border hover */
+}
+
+/* About Me Content & Hover Effects */
+#about-me p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+#about-me p:hover {
+    color: #1abc9c; /* Text highlights on hover */
+    padding-left: 10px; /* Text pushes slightly to the right */
+}
+
+/* Skills Cards & Hover Effects */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.skill-card {
+    background-color: white;
+    padding: 20px;
     border-radius: 8px;
     text-align: center;
-    color: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid #1abc9c;
+    font-weight: bold;
+    color: #34495e;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px); /* Elevates on hover */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1); /* Soft shadow expansion */
+    background-color: #1abc9c; /* Fills card with accent color */
+    color: white; /* Changes text to white */
+}
+
+/* Projects Cards & Hover Effects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-left: 0px solid #1abc9c;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Elevation */
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1); /* Expanded shadow */
+    border-left: 6px solid #1abc9c; /* Pulls an accent border from left */
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-info h3 {
+    color: #1abc9c; /* Project title shifts color when card is hovered */
+}
+
+.project-info p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* Recommendations Form & Cards Hover Effects */
+.rec-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    transition: box-shadow 0.3s ease;
+}
+
+.rec-form:hover {
+    box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: #1abc9c; /* Focus border color */
+}
+
+/* Submit Button Hover Effect */
+.btn {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #16a085; /* Darken button */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+.btn:active {
+    transform: translateY(0); /* Depress on click */
+}
+
+/* Recommendations Cards Hover Effects */
+.recommendation-list {
+    margin-top: 20px;
+}
+
+.rec-card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 5px solid #1abc9c;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+}
+
+.rec-card:hover {
+    transform: scale(1.02); /* Slight swell */
+    box-shadow: 0 6px 10px rgba(0,0,0,0.05); /* Expanded shadow */
+    border-left-color: #e74c3c; /* Color shift of left border on hover */
+}
+
+.rec-text {
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.rec-author {
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: right;
 }
