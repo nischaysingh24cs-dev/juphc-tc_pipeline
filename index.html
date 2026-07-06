@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nischay Singh | Portfolio</title>
+  <title>Nischay Singh Portfolio</title>
   <style>
     html {
       scroll-behavior: smooth;
@@ -12,112 +12,145 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f7f7f7;
+      background: #f4f7fb;
+      color: #1f2937;
     }
 
-    header {
+    .header {
       position: sticky;
       top: 0;
       background: #111827;
       color: white;
       z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
     }
 
-    .navbar {
+    .nav_bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 14px 20px;
       gap: 16px;
+      padding: 14px 22px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .name {
-      font-size: 1.4rem;
-      font-weight: bold;
+    .iconbutton a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.14);
+      color: white;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .iconbutton a:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    .profile_name {
+      font-size: 1.5rem;
+      font-weight: 700;
       white-space: nowrap;
     }
 
-    .nav-links {
+    .nav_links {
       display: flex;
       flex-wrap: wrap;
       gap: 18px;
-      align-items: center;
     }
 
-    .nav-links a {
+    .nav_links a {
       color: white;
       text-decoration: none;
       font-weight: 600;
     }
 
-    .nav-links a:hover {
+    .nav_links a:hover {
       text-decoration: underline;
     }
 
-    .home-icon {
-      font-size: 1.3rem;
-      text-decoration: none;
-      color: white;
-      padding: 6px 10px;
-      border-radius: 8px;
-      background: rgba(255,255,255,0.12);
-    }
-
-    .home-icon:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
     section {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 24px auto;
-      padding: 28px 20px;
+      padding: 28px 22px;
       background: white;
       border-radius: 14px;
       box-shadow: 0 4px 14px rgba(0,0,0,0.06);
     }
 
-    h1, h2 {
+    .section_title {
       margin-top: 0;
+      font-size: 1.8rem;
     }
 
-    .skills-list,
-    .project-list,
-    .rec-list {
+    .about {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .about img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #dbeafe;
+    }
+
+    .about_text {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .skills_container,
+    .projects_container,
+    .recommendations_container {
       display: grid;
-      gap: 14px;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
     }
 
-    .card {
+    .skill_card,
+    .project_card,
+    .recommendation {
       border: 1px solid #e5e7eb;
       border-radius: 12px;
+      background: #f9fafb;
       padding: 16px;
-      background: #fafafa;
     }
 
-    .projects a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
+    .skill_card img {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
 
-    .projects a:hover {
-      text-decoration: underline;
+    .skill_card h3,
+    .project_card h3 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <nav class="navbar">
-      <a class="home-icon" href="#home" aria-label="Home">🏠</a>
-      <div class="name">Nischay Singh</div>
-      <div class="nav-links">
+  <header class="header">
+    <nav class="nav_bar">
+      <div class="iconbutton">
+        <a href="#home" aria-label="Home">🏠</a>
+      </div>
+
+      <div class="profile_name">
+        Nischay Singh
+      </div>
+
+      <div class="nav_links">
         <a href="#about">About Me</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
@@ -127,62 +160,80 @@
   </header>
 
   <section id="home">
-    <h1>Hi, I'm Nischay Singh</h1>
-    <p>Welcome to my personal portfolio website. This page includes my introduction, skills, projects, and recommendations.</p>
+    <h1>Welcome to My Portfolio</h1>
+    <p>This is my personal portfolio website.</p>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a motivated and enthusiastic learner passionate about web development, problem-solving, and creating useful digital experiences.
-      I enjoy building clean, responsive, and user-friendly websites.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-list">
-      <div class="card">HTML</div>
-      <div class="card">CSS</div>
-      <div class="card">JavaScript</div>
-      <div class="card">Bootstrap</div>
-      <div class="card">React</div>
-      <div class="card">Git & GitHub</div>
+    <h2 class="section_title">About Me</h2>
+    <div class="about">
+      <img src="https://via.placeholder.com/300x300.png?text=Nischay+Singh" alt="Nischay Singh profile image" />
+      <div class="about_text">
+        <h3>Nischay Singh</h3>
+        <p>
+          I am Nischay Singh, a passionate learner from Bengaluru, Karnataka.
+          I enjoy building web pages, solving problems, and improving my skills in front-end development.
+          I like creating simple, responsive, and user-friendly websites.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>A responsive personal portfolio website built with HTML, CSS, and JavaScript.</p>
-        <a href="#home">View Project</a>
+  <section id="skills">
+    <h2 class="section_title">Skills</h2>
+    <div class="skills_container">
+      <div class="skill_card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo" />
+        <h3>CSS</h3>
+        <p>Stylish layouts, responsive design, and clean visual presentation.</p>
       </div>
-      <div class="card">
-        <h3>To-Do App</h3>
-        <p>An interactive task manager that helps users track daily activities.</p>
-        <a href="#home">View Project</a>
+      <div class="skill_card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" />
+        <h3>React</h3>
+        <p>Building interactive user interfaces with reusable components.</p>
       </div>
-      <div class="card">
-        <h3>Weather App</h3>
-        <p>A weather dashboard that displays live weather data for different cities.</p>
-        <a href="#home">View Project</a>
+      <div class="skill_card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo" />
+        <h3>Bootstrap</h3>
+        <p>Fast responsive layouts with ready-made UI components.</p>
+      </div>
+      <div class="skill_card">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" />
+        <h3>Python</h3>
+        <p>Writing simple programs, logic, and basic automation tasks.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="section_title">Projects</h2>
+    <div class="projects_container">
+      <div class="project_card">
+        <h3>Travel Planner Website</h3>
+        <p>A responsive website that helps users explore travel destinations and build trip plans.</p>
+      </div>
+      <div class="project_card">
+        <h3>Personal Expense Tracker</h3>
+        <p>An app for tracking income, expenses, and monthly budgeting in a simple dashboard.</p>
+      </div>
+      <div class="project_card">
+        <h3>Recipe Finder</h3>
+        <p>A search-based project that displays recipe ideas and ingredients for everyday cooking.</p>
       </div>
     </div>
   </section>
 
   <section id="recommendations">
-    <h2>Recommendations</h2>
-    <div class="rec-list">
-      <div class="card">
-        <p>"Nischay is hardworking, creative, and quick to learn new technologies."</p>
+    <h2 class="section_title">Recommendations</h2>
+    <div class="recommendations_container">
+      <div class="recommendation">
+        Nischay is a dedicated and quick learner who consistently puts effort into improving his work and understanding new concepts.
       </div>
-      <div class="card">
-        <p>"He builds clean and well-structured web pages with great attention to detail."</p>
+      <div class="recommendation">
+        He communicates clearly, works with focus, and shows strong interest in building practical web projects.
       </div>
-      <div class="card">
-        <p>"A reliable and enthusiastic developer who always gives his best effort."</p>
+      <div class="recommendation">
+        Nischay is reliable, creative, and always willing to accept feedback to make his projects better.
       </div>
     </div>
   </section>
