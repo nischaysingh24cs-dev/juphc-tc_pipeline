@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio - Nischay Singh</title>
+    <title>Nischay Singh - Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -13,9 +11,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: #f4f4f9;
@@ -23,114 +19,90 @@
             line-height: 1.6;
         }
 
-        /* ---------- Profile / Home Section ---------- */
-        .profile {
-            min-height: 100vh;
+        /* ---------- Navigation Bar ---------- */
+        nav {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 40px 20px;
-            position: relative;
-        }
-
-        .profile_name {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-        }
-
-        .profile img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            border: 5px solid #fff;
-            object-fit: cover;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .profile p {
-            max-width: 700px;
-            font-size: 1.1rem;
-            margin: 0 auto 30px;
-        }
-
-        .profile a {
-            color: #fff;
-            margin: 0 12px;
-            font-size: 1.4rem;
-            transition: transform 0.3s, color 0.3s;
-        }
-
-        .profile a:hover {
-            color: #ffd700;
-            transform: scale(1.2);
-        }
-
-        /* Home icon button */
-        .iconbutton {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 10px 14px;
-            border-radius: 50%;
-            z-index: 1000;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .iconbutton:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(1.1);
-        }
-
-        .iconbutton i {
-            color: #fff;
-            font-size: 1.2rem;
-        }
-
-        /* ---------- Navigation Bar ---------- */
-        .topnav {
-            position: fixed;
+            padding: 20px 0;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            padding: 15px 0;
-            z-index: 999;
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        .topnav a {
+        #home {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .profile_name {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .contact_info {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            opacity: 0.9;
+        }
+
+        .contact_info img {
+            width: 18px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .topdiv { display: flex; gap: 25px; flex-wrap: wrap; }
+
+        .topmenu {
             color: #fff;
             text-decoration: none;
-            margin: 0 20px;
-            font-size: 1rem;
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .topnav a:hover {
-            color: #ffd700;
-        }
+        .topmenu:hover { color: #ffd700; }
 
-        .topnav a.active {
-            color: #ffd700;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 3px;
-        }
-
-        /* ---------- Generic Section ---------- */
-        section {
-            padding: 100px 20px 60px;
+        /* ---------- About Me ---------- */
+        .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
         }
+
+        .container img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #1e3c72;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .container h1 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .container p {
+            color: #555;
+            font-size: 1.05rem;
+            max-width: 700px;
+        }
+
+        /* ---------- Section Headings ---------- */
+        section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
 
         h2 {
             text-align: center;
@@ -148,39 +120,6 @@
             background: #ffd700;
             margin: 12px auto 0;
             border-radius: 2px;
-        }
-
-        /* ---------- About Me ---------- */
-        #about .about-container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        #about .about-container img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #1e3c72;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-        }
-
-        #about .about-text {
-            max-width: 600px;
-        }
-
-        #about .about-text h3 {
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-            color: #1e3c72;
-        }
-
-        #about .about-text p {
-            font-size: 1.05rem;
-            color: #555;
         }
 
         /* ---------- Skills ---------- */
@@ -219,10 +158,7 @@
             color: #1e3c72;
         }
 
-        .skill p {
-            font-size: 0.9rem;
-            color: #777;
-        }
+        .skill p { font-size: 0.9rem; color: #777; }
 
         /* ---------- Projects ---------- */
         .projects-container {
@@ -250,9 +186,14 @@
             font-size: 1.25rem;
         }
 
-        .project-card p {
-            color: #555;
-            font-size: 0.97rem;
+        .project-card ul { list-style: disc; padding-left: 20px; }
+
+        .project-card li { color: #555; font-size: 0.97rem; }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e0e0e0;
+            margin: 25px 0;
         }
 
         /* ---------- Recommendations ---------- */
@@ -270,83 +211,86 @@
             font-style: italic;
             color: #444;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            position: relative;
+            line-height: 1.7;
         }
 
-        .recommendation::before {
-            content: "\201C";
-            font-size: 4rem;
-            color: #ffd700;
-            position: absolute;
-            top: -10px;
-            left: 10px;
-            font-family: Georgia, serif;
-            line-height: 1;
-        }
-
-        .recommendation p {
-            position: relative;
-            z-index: 1;
-            padding-top: 20px;
-        }
-
-        .recommendation .author {
-            display: block;
-            margin-top: 15px;
-            font-style: normal;
-            font-weight: 600;
-            color: #1e3c72;
-            text-align: right;
-        }
+        .recommendation span { color: #1e3c72; font-weight: 700; font-size: 1.2rem; }
 
         /* ---------- Recommendation Form ---------- */
-        .recommendation-form {
+        .flex_center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        fieldset {
+            border: 2px solid #1e3c72;
+            border-radius: 12px;
+            padding: 30px;
             background: #fff;
             max-width: 600px;
-            margin: 60px auto 0;
-            padding: 30px;
-            border-radius: 12px;
+            width: 100%;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .recommendation-form h3 {
-            text-align: center;
-            margin-bottom: 20px;
+        .introduction {
+            font-size: 1.3rem;
+            font-weight: 700;
             color: #1e3c72;
+            padding: 0 15px;
         }
 
-        .recommendation-form input,
-        .recommendation-form textarea {
+        fieldset input, fieldset textarea {
             width: 100%;
             padding: 12px;
-            margin-bottom: 15px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 1rem;
             font-family: inherit;
         }
 
-        .recommendation-form textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
+        fieldset textarea { resize: vertical; min-height: 100px; }
 
-        .recommendation-form button {
-            display: block;
-            width: 100%;
+        #recommend_btn {
             background: #1e3c72;
             color: #fff;
             border: none;
-            padding: 12px;
+            padding: 12px 30px;
             font-size: 1rem;
             border-radius: 6px;
             cursor: pointer;
+            margin-top: 10px;
             transition: background 0.3s;
         }
 
-        .recommendation-form button:hover {
+        #recommend_btn:hover { background: #2a5298; }
+
+        /* ---------- Icon button (Home) ---------- */
+        .iconbutton {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #1e3c72;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .iconbutton:hover {
+            transform: scale(1.1);
             background: #2a5298;
         }
+
+        .iconbutton a { display: flex; }
+
+        .iconbutton svg { display: block; }
 
         /* ---------- Popup ---------- */
         .popup {
@@ -363,207 +307,248 @@
             text-align: center;
         }
 
-        .popup.show {
-            display: block;
-        }
+        .popup.show { display: flex; flex-direction: column; align-items: center; }
+
+        .popup img { width: 60px; margin-bottom: 15px; }
+
+        .popup h3 { color: #1e3c72; margin-bottom: 15px; }
 
         .popup button {
-            margin-top: 15px;
             background: #1e3c72;
             color: #fff;
             border: none;
-            padding: 8px 20px;
+            padding: 8px 25px;
             border-radius: 6px;
             cursor: pointer;
-        }
-
-        /* ---------- Footer ---------- */
-        footer {
-            background: #1e3c72;
-            color: #fff;
-            text-align: center;
-            padding: 25px 20px;
+            font-size: 1rem;
         }
 
         @media (max-width: 768px) {
-            .profile_name {
-                font-size: 2rem;
-            }
-
-            .topnav a {
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
-
-            #about .about-container {
-                flex-direction: column;
-                text-align: center;
-            }
+            #home { flex-direction: column; gap: 15px; }
+            .topdiv { justify-content: center; }
+            .container { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Home Icon Button (anchors to #home) -->
-    <a href="#home" class="iconbutton" aria-label="Home">
-        <i class="fas fa-home"></i>
-    </a>
-
     <!-- Navigation Bar -->
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#recommendations">Recommendations</a>
-    </div>
-
-    <!-- Home / Profile Section -->
-    <section id="home" class="profile">
-        <div class="profile_name">Nischay Singh</div>
-        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=NischaySingh" alt="Nischay Singh - Profile Picture">
-        <p>Hi, I'm Nischay Singh! I am a full stack developer with 2 years of experience in both application and presentation layers. I have worked on applications and microservices deployed on IBM Cloud. I am an avid user of IBM Watson Services.</p>
-        <div>
-            <a href="mailto:nischaysingh24cs@rnsit.ac.in" aria-label="Email"><i class="fas fa-envelope"></i></a>
-            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <nav>
+      <div id="home">
+        <div class="profile_name">
+          Nischay Singh
+          <div class="contact_info">
+            <img src="https://static.vecteezy.com/system/resources/previews/012/909/513/non_2x/purple-mail-icon-free-png.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
+            nischaysingh24cs@rnsit.ac.in
+          </div>
+          <div class="contact_info">
+            <img src="https://e7.pngegg.com/pngimages/544/567/png-clipart-telephone-call-computer-icons-email-st-oswald-s-hospice-email-miscellaneous-purple.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
+            +91 9000000000
+          </div>
         </div>
+        <div class="topdiv">
+          <a class="topmenu" href="#about-me">About Me</a>
+          <!-- Add the links for Skills, Projects and Recommendation here -->
+          <a class="topmenu" href="#skills">Skills</a>
+          <a class="topmenu" href="#projects">Projects</a>
+          <a class="topmenu" href="#recommendations">Recommendations</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- About Me -->
+    <section id="about-me" class="container">
+      <div>
+        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=NischaySingh" class="profile_image" alt="Nischay Singh - About Me"/>
+      </div>
+
+      <div>
+          <h1>
+            Hi, I'm Nischay Singh! <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyAIaj-AMZ-_pabfA72Eqr-A11hA2tNRliSg&usqp=CAU" width="60px" alt="wave emoji"/>
+          </h1>
+          <p>
+            I am a full stack developer with 2 years of experience in both application and presentation layers. I have worked on applications and microservices deployed on IBM Cloud. I am an avid user of IBM Watson Services and have worked on Watson Assistant, NLU, and Sentiment Analyzer to name a few. I love building beautiful, user-friendly web applications and I am constantly learning new technologies to grow as a developer.
+          </p>
+      </div>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="about-container">
-            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=NischaySinghAbout" alt="Nischay Singh - About Me">
-            <div class="about-text">
-                <h3>Nischay Singh</h3>
-                <p>Hi, I'm Nischay Singh! I am a full stack developer with 2 years of experience in both application and presentation layers. I have worked on applications and microservices deployed on IBM Cloud. I am an avid user of IBM Watson Services and have worked on Watson Assistant, NLU, and Sentiment Analyzer to name a few. I love building beautiful, user-friendly web applications and I'm constantly learning new technologies to grow as a developer.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
+    <!-- Skills -->
     <section id="skills">
-        <h2>Skills</h2>
-        <div class="all_skills">
-            <div class="skill">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
-                <h6>HTML</h6>
-                <p>2 years experience</p>
-            </div>
-            <div class="skill">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript Logo">
-                <h6>JavaScript</h6>
-                <p>3 years experience</p>
-            </div>
-            <div class="skill">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo">
-                <h6>CSS</h6>
-                <p>3 years experience</p>
-            </div>
-            <div class="skill">
-                <img src="https://upload.wikimedia.org/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
-                <h6>Python</h6>
-                <p>2 years experience</p>
-            </div>
-            <div class="skill">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB Logo">
-                <h6>MongoDB</h6>
-                <p>1 year experience</p>
-            </div>
-            <div class="skill">
-                <img src="https://upload.wikimedia.org/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL Logo">
-                <h6>PostgreSQL</h6>
-                <p>1 year experience</p>
-            </div>
-            <div class="skill">
-                <img src="https://upload.wikimedia.org/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo">
-                <h6>TypeScript</h6>
-                <p>1 year experience</p>
-            </div>
+      <h2>Skills</h2>
+      <div style="clear:both;"></div>
+
+      <div class="all_skills">
+        <div class="skill">
+          <img src="https://www.shutterstock.com/image-vector/logo-vector-html-5-low-600w-1601607721.jpg" alt="HTML Logo"/>
+          <h6>HTML</h6>
+          <p>2 years experience</p>
         </div>
+
+        <div class="skill">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" alt="JavaScript Logo"/>
+          <h6>JavaScript</h6>
+          <p>3 years experience</p>
+        </div>
+
+        <!-- Add more skills here -->
+        <div class="skill">
+          <img src="https://www.shutterstock.com/image-vector/logo-vector-css-3-low-600w-1902943426.jpg" alt="CSS Logo"/>
+          <h6>CSS</h6>
+          <p>3 years experience</p>
+        </div>
+        <div class="skill">
+          <img src="https://img.icons8.com/color/512/python.png" alt="Python Logo"/>
+          <h6>Python</h6>
+          <p>2 years experience</p>
+        </div>
+        <div class="skill">
+          <img src="https://img.icons8.com/fluency/512/c-programming.png" alt="C Programming Logo"/>
+          <h6>C programming</h6>
+          <p>2 years experience</p>
+        </div>
+        <div class="skill">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" alt="MongoDB Logo"/>
+          <h6>MongoDB</h6>
+          <p>1 year experience</p>
+        </div>
+        <div class="skill">
+          <img src="https://upload.wikimedia.org/commons/4/4c/Typescript_logo_2020.svg" alt="TypeScript Logo"/>
+          <h6>TypeScript</h6>
+          <p>1 year experience</p>
+        </div>
+
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <h3>Smart Task Manager</h3>
-                <p>Built a full-featured task management web app with drag-and-drop, reminders, and team collaboration features using React, Node.js, and MongoDB. Integrated with the Twilio API for SMS notifications.</p>
-            </div>
-            <div class="project-card">
-                <h3>Weather Dashboard</h3>
-                <p>Designed and developed a responsive weather dashboard that pulls real-time data from the OpenWeatherMap API. Features include 7-day forecasts, interactive maps, and location-based search using vanilla JavaScript and Chart.js.</p>
-            </div>
-            <div class="project-card">
-                <h3>Portfolio Generator</h3>
-                <p>Created a CLI tool in Python that auto-generates static portfolio websites from a JSON configuration file. Supports multiple themes, Markdown-based bios, and one-click deployment to GitHub Pages.</p>
-            </div>
+    <!-- Projects -->
+    <section class="projects" id="projects">
+      <h2>
+        Projects
+      </h2>
+      <div style="clear:both;"></div>
+
+        <div id="projects-container" class="projects-container">
+          <div class="project-card">
+            <h3>Smart Task Manager</h3>
+            <ul>
+              <li>Built a full-featured task management web app with drag-and-drop, reminders, and team collaboration features using React, Node.js, and MongoDB. Integrated with the Twilio API for SMS notifications.</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="project-card">
+            <h3>Weather Dashboard</h3>
+            <ul>
+              <li>Designed and developed a responsive weather dashboard that pulls real-time data from the OpenWeatherMap API. Features include 7-day forecasts, interactive maps, and location-based search using vanilla JavaScript and Chart.js.</li>
+            </ul>
+          </div>
+          <hr>
+          <div class="project-card">
+            <h3>Portfolio Generator</h3>
+            <ul>
+              <li>Created a CLI tool in Python that auto-generates static portfolio websites from a JSON configuration file. Supports multiple themes, Markdown-based bios, and one-click deployment to GitHub Pages.</li>
+            </ul>
+          </div>
         </div>
     </section>
+    <div style="clear:both;"></div>
 
-    <!-- Recommendations Section -->
+    <!-- Recommendations -->
     <section id="recommendations">
-        <h2>Recommendations</h2>
-        <div class="all_recommendations">
-            <div class="recommendation">
-                <p>Nischay is a very quick learner and quickly grasps key concepts of Web development. He has a great attitude and is an excellent team player. He has a curious mind and asks the right questions. He takes initiative within a team and has the potential to lead the team.</p>
-                <span class="author">— Michael Scott, Regional Manager</span>
-            </div>
-            <div class="recommendation">
-                <p>Working with Nischay has been an awesome experience. He is highly knowledgeable and always goes the extra step to make sure everything is right. For any future projects that need his expertise, I would definitely want to work with him again.</p>
-                <span class="author">— Priya Sharma, Senior Developer</span>
-            </div>
-            <div class="recommendation">
-                <p>I had worked along with Nischay during the initial phase of our venture which needed Web development. He is a committed resource who has in-depth knowledge about the domain. He will be an asset for any organisation!</p>
-                <span class="author">— Rahul Verma, CTO at TechStart</span>
-            </div>
+      <h2>Recommendations</h2>
+      <div style="clear:both;"></div>
+      <div class="all_recommendations" id="all_recommendations">
+        <div class="recommendation">
+          <span>&#8220;</span>
+          Nischay is a very quick learner and quickly grasps key concepts of Web development.
+          He has a great attitude and is an excellent team player.
+          He has a curious mind and asks the right questions.
+          He takes initiative within a team and has the potential to lead the team.
+          <span>&#8221;</span>
         </div>
-
-        <!-- Recommendation Form -->
-        <div class="recommendation-form">
-            <h3>Leave a Recommendation</h3>
-            <input type="text" id="rec_name" placeholder="Name (Optional)">
-            <textarea id="rec_message" placeholder="Message"></textarea>
-            <button onclick="submitRecommendation()">Submit</button>
+        <div class="recommendation">
+          <span>&#8220;</span>
+          Working with Nischay has been an awesome experience.
+          He is highly knowledgeable and always goes the extra step to make sure everything is right.
+          For any future projects that need his expertise, I would definitely want to work with him again.
+          <span>&#8221;</span>
         </div>
+        <div class="recommendation">
+          <span>&#8220;</span>
+          I had worked along with Nischay during the initial phase of our venture which needed Web development.
+          He is a committed resource who has in-depth knowledge about the domain.
+          He will be an asset for any organisation!
+          <span>&#8221;</span>
+        </div>
+      </div>
     </section>
 
-    <!-- Confirmation Popup -->
-    <div class="popup" id="popup">
-        <p>Thanks for leaving a recommendation!</p>
-        <button onclick="document.getElementById('popup').classList.remove('show')">Ok</button>
+    <!-- Recommendation Form -->
+    <section id="contact">
+      <div class="flex_center">
+        <fieldset>
+          <legend class="introduction">Leave a Recommendation</legend>
+          <input type="text" placeholder="Name (Optional)"> <br/>
+          <textarea id="new_recommendation" cols="500" rows="10" placeholder="Message"></textarea>
+          <div class="flex_center">
+            <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
+          </div>
+        </fieldset>
+      </div>
+    </section>
+
+    <div class="iconbutton">
+      <a href="#home">
+        <!--Add the code here for the logo to appear and the icon to be actionable-->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+      </a>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Nischay Singh. All rights reserved.</p>
-    </footer>
+    <div class="popup" id="popup" class="flex_center">
+      <img src="https://cdn-icons-png.flaticon.com/512/5610/5610944.png" alt="checkmark"/>
+      <h3>Thanks for leaving a Recommendation!</h3>
+      <button onclick="showPopup(false)">Ok</button>
+    </div>
 
     <script>
-        function submitRecommendation() {
-            const name = document.getElementById('rec_name').value.trim();
-            const message = document.getElementById('rec_message').value.trim();
+        function showPopup(show) {
+            const popup = document.getElementById('popup');
+            if (show) {
+                popup.classList.add('show');
+            } else {
+                popup.classList.remove('show');
+            }
+        }
+
+        function addRecommendation() {
+            const textarea = document.getElementById('new_recommendation');
+            const message = textarea.value.trim();
             if (!message) {
-                alert('Please enter a message.');
+                alert('Please enter a recommendation message.');
                 return;
             }
-            const recommendation = document.createElement('div');
-            recommendation.className = 'recommendation';
-            const text = document.createElement('p');
-            text.textContent = '"' + message + '"';
-            recommendation.appendChild(text);
-            if (name) {
-                const author = document.createElement('span');
-                author.className = 'author';
-                author.textContent = '— ' + name;
-                recommendation.appendChild(author);
-            }
-            document.querySelector('.all_recommendations').appendChild(recommendation);
-            document.getElementById('rec_name').value = '';
-            document.getElementById('rec_message').value = '';
-            document.getElementById('popup').classList.add('show');
+            const nameInput = document.querySelector('#contact fieldset input[type="text"]');
+            const name = nameInput.value.trim();
+
+            const newRec = document.createElement('div');
+            newRec.className = 'recommendation';
+
+            const openQuote = document.createElement('span');
+            openQuote.innerHTML = '&#8220;';
+            newRec.appendChild(openQuote);
+
+            newRec.appendChild(document.createTextNode(' ' + message + (name ? ' — ' + name : '') + ' '));
+
+            const closeQuote = document.createElement('span');
+            closeQuote.innerHTML = '&#8221;';
+            newRec.appendChild(closeQuote);
+
+            document.getElementById('all_recommendations').appendChild(newRec);
+
+            textarea.value = '';
+            nameInput.value = '';
+            showPopup(true);
         }
     </script>
 </body>
