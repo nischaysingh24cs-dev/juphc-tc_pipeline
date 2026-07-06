@@ -1,230 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nischay Singh Portfolio</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1f2937;
-    }
-
-    .header {
-      position: sticky;
-      top: 0;
-      background: #111827;
-      color: white;
-      z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-    }
-
-    .nav_bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 22px;
-      max-width: 1200px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-
-    .iconbutton a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.14);
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    .profile_name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .nav_links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    .nav_links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    section {
-      max-width: 1200px;
-      margin: 24px auto;
-      padding: 28px 22px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
-
-    .about {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .about img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #dbeafe;
-    }
-
-    .about_text {
-      flex: 1;
-      min-width: 260px;
-    }
-
-    .skills_container,
-    .projects_container,
-    .recommendations_container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-
-    .skill_card,
-    .project_card,
-    .recommendation {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      background: #f9fafb;
-      padding: 16px;
-    }
-
-    .skill_card img {
-      width: 40px;
-      height: 40px;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-
-    .section_title {
-      margin-top: 0;
-      font-size: 1.8rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nischay Singh - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Basic placeholder styles to ensure layout rendering */
+        body { font-family: sans-serif; scroll-behavior: smooth; margin: 0; padding: 0; }
+        nav { background: #333; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav a { color: white; margin-right: 1.5rem; text-decoration: none; }
+        section { padding: 80px 20px 40px; border-bottom: 1px solid #ccc; }
+        .all_skills { display: flex; gap: 20px; }
+        .skill { text-align: center; }
+        .skill img { width: 50px; height: 50px; }
+        .projects_container { display: flex; gap: 20px; flex-wrap: wrap; }
+        .project_card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; width: 250px; }
+        .recommendation { background: #f9f9f9; border-left: 5px solid #007acc; padding: 10px; margin: 10px 0; }
+        .iconbutton { position: fixed; bottom: 20px; right: 20px; background: #007acc; padding: 10px; border-radius: 50%; }
+        .iconbutton a { color: white; font-size: 24px; text-decoration: none; }
+    </style>
 </head>
 <body>
 
-  <header class="header">
-    <nav class="nav_bar">
-      <div class="iconbutton">
-        <a href="#home" aria-label="Home">🏠</a>
-      </div>
-
-      <div class="profile_name">
-        Nischay Singh
-      </div>
-
-      <div class="nav_links">
-        <a href="#about">About Me</a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#recommendations">Recommendations</a>
-      </div>
     </nav>
-  </header>
 
-  <section id="home">
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hi, I am Nischay Singh. This portfolio shows my profile, skills, projects, and recommendations.</p>
-  </section>
-
-  <section id="about">
-    <h2 class="section_title">About Me</h2>
-    <div class="about">
-      <img src="https://via.placeholder.com/300x300.png?text=Nischay+Singh" alt="Nischay Singh profile image" />
-      <div class="about_text">
-        <h3>Nischay Singh</h3>
-        <p>
-          I am Nischay Singh from Bengaluru, Karnataka. I am passionate about web development,
-          enjoy creating responsive websites, and like learning new technologies that help me
-          build useful and attractive projects.
+    <section id="home" class="about_me">
+        <div class="profile_name">
+            <h1>Nischay Singh</h1>
+        </div>
+        
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb" alt="Nischay Singh Profile Photo" class="profile_image" style="width:150px; border-radius:50%;">
+        <p class="personal_summary">
+            I am a passionate Computer Science Engineering student specializing in building scalable web architectures and leading technical placement coordination. Focused on creating efficient user-centric applications.
         </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="skills">
-    <h2 class="section_title">Skills</h2>
-    <div class="skills_container">
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo" />
-        <h3>CSS</h3>
-        <p>Responsive layouts, styling, and clean page design.</p>
-      </div>
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo" />
-        <h3>React</h3>
-        <p>Component-based user interfaces and dynamic front-end apps.</p>
-      </div>
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo" />
-        <h3>Bootstrap</h3>
-        <p>Fast and responsive website layouts with ready-made components.</p>
-      </div>
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" />
-        <h3>Python</h3>
-        <p>Logic building, scripting, and problem solving.</p>
-      </div>
-    </div>
-  </section>
+    <section id="skills">
+        <h2>My Skills</h2>
+        <div class="all_skills">
+            <div class="skill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo">
+                <p>Python</p>
+            </div>
+            <div class="skill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3 Logo">
+                <p>CSS3</p>
+            </div>
+            <div class="skill">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++ Logo">
+                <p>C++</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="projects">
-    <h2 class="section_title">Projects</h2>
-    <div class="projects_container">
-      <div class="project_card">
-        <h3>Travel Planner Website</h3>
-        <p>A responsive site that helps users explore destinations and plan trips.</p>
-      </div>
-      <div class="project_card">
-        <h3>Personal Expense Tracker</h3>
-        <p>An app for tracking daily spending, income, and monthly budgets.</p>
-      </div>
-      <div class="project_card">
-        <h3>Recipe Finder</h3>
-        <p>A simple project to search recipes and view ingredients and cooking ideas.</p>
-      </div>
-    </div>
-  </section>
+    <section id="projects">
+        <h2>Recent Projects</h2>
+        <div class="projects_container">
+            <div class="project_card">
+                <h3>Automated Placement Analytics Platform</h3>
+                <p>Developed a secure client-facing relational web portal that tracks real-time hiring metrics, automates eligibility indexing, and coordinates company interview loops seamlessly.</p>
+            </div>
+            <div class="project_card">
+                <h3>Carbon Radiocarbon Dating Simulation Engine</h3>
+                <p>Built an interactive algorithmic engine mapping half-life degradation functions to calculate organic material lifespans through radioactive isotope modeling profiles.</p>
+            </div>
+            <div class="project_card">
+                <h3>Cryptographic Key Ledger Distribution System</h3>
+                <p>Designed a decentralized network framework showcasing fault-tolerant tokenized ledgers to securely verify digital structural authentication pipelines.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="recommendations">
-    <h2 class="section_title">Recommendations</h2>
-    <div class="recommendations_container">
-      <div class="recommendation">
-        Nischay is a dedicated learner who works with focus and consistently improves his skills through practice and effort.
-      </div>
-      <div class="recommendation">
-        He is creative, cooperative, and always willing to take feedback to make his work better and more polished.
-      </div>
-      <div class="recommendation">
-        Nischay shows strong interest in web development and builds projects with care, patience, and attention to detail.
-      </div>
+    <section id="recommendations">
+        <h2>Recommendations</h2>
+        
+        <div class="recommendation">
+            <p>"Nischay is an incredibly organized leader who completely revolutionized our technical coordination timeline. His engineering skills coupled with clear project delivery metrics make him an absolute asset to any engineering team."</p>
+            <cite>- Professor K. Sharma, Academic Lead</cite>
+        </div>
+
+        <div class="recommendation">
+            <p>"Working along with Nischay on complex system architecture modules was fantastic. He writes clean, scalable code and has an outstanding capability to debug intricate multi-threaded layout scripts effortlessly."</p>
+            <cite>- Aarav Mehta, Senior Peer Developer</cite>
+        </div>
+
+        <div class="recommendation">
+            <p>"Nischay showcases a rare mixture of exceptional domain knowledge in algorithms alongside brilliant professional communication skills. He delivers complex features well within strict target sprint constraints."</p>
+            <cite>- Priya Nair, Tech Lead</cite>
+        </div>
+    </section>
+
+    <div class="iconbutton">
+        <a href="#home">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </div>
-  </section>
 
 </body>
 </html>
