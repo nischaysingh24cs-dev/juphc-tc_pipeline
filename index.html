@@ -1,213 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nischay Singh Portfolio</title>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1f2937;
-    }
-    .header {
-      position: sticky;
-      top: 0;
-      background: #111827;
-      color: white;
-      z-index: 1000;
-    }
-    .nav_bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 14px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-    .iconbutton a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.15);
-      color: white;
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-    .profile_name {
-      font-size: 1.5rem;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-    .nav_links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-    .nav_links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    section {
-      max-width: 1200px;
-      margin: 24px auto;
-      padding: 28px 20px;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-    }
-    .section_title {
-      margin-top: 0;
-      font-size: 1.8rem;
-    }
-    .about {
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .about img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #dbeafe;
-    }
-    .about_text {
-      flex: 1;
-      min-width: 260px;
-    }
-    .skills_container,
-    .projects_container,
-    .recommendations_container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .skill_card,
-    .project_card,
-    .recommendation {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      background: #f9fafb;
-      padding: 16px;
-    }
-    .skill_card img {
-      width: 40px;
-      height: 40px;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nischay Singh Portfolio</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            background:#f4f4f4;
+        }
+
+        nav{
+            background:#0b3d91;
+            color:white;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 50px;
+            position:sticky;
+            top:0;
+        }
+
+        .profile_name{
+            font-size:30px;
+            font-weight:bold;
+        }
+
+        .topdiv a{
+            color:white;
+            text-decoration:none;
+            margin-left:20px;
+            font-weight:bold;
+        }
+
+        section{
+            padding:60px;
+        }
+
+        #about-me{
+            display:flex;
+            align-items:center;
+            gap:40px;
+        }
+
+        #about-me img{
+            width:220px;
+            height:220px;
+            border-radius:50%;
+        }
+
+        #about-me h1{
+            color:#0b3d91;
+            margin-bottom:15px;
+        }
+
+        #skills h2,
+        #projects h2,
+        #recommendations h2{
+            color:#0b3d91;
+            margin-bottom:30px;
+        }
+
+        .all_skills{
+            display:flex;
+            flex-wrap:wrap;
+            gap:25px;
+        }
+
+        .skill{
+            width:180px;
+            text-align:center;
+            border:1px solid #ddd;
+            border-radius:10px;
+            background:white;
+            padding:20px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .skill img{
+            width:60px;
+            height:60px;
+        }
+
+        .skill h6{
+            margin-top:10px;
+            font-size:18px;
+        }
+
+        .project-card{
+            background:white;
+            border-radius:10px;
+            padding:20px;
+            margin-bottom:20px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .recommendation{
+            background:white;
+            padding:20px;
+            border-radius:10px;
+            margin-bottom:20px;
+            box-shadow:0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .iconbutton{
+            position:fixed;
+            right:20px;
+            bottom:20px;
+        }
+
+        .iconbutton a{
+            background:#0b3d91;
+            color:white;
+            text-decoration:none;
+            width:60px;
+            height:60px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            border-radius:50%;
+            font-size:28px;
+        }
+    </style>
+
 </head>
+
 <body>
 
-  <header class="header">
-    <nav class="nav_bar">
-      <div class="iconbutton">
-        <a href="#home">🏠</a>
-      </div>
+<div id="home">
 
-      <div class="profile_name">
-        Nischay Singh
-      </div>
+<nav>
 
-      <div class="nav_links">
-        <a href="#about">About Me</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#recommendations">Recommendations</a>
-      </div>
-    </nav>
-  </header>
+<div class="profile_name">
+    Nischay Singh
+</div>
 
-  <section id="home">
-    <h1>Welcome to My Portfolio</h1>
-    <p>Hello, I am Nischay Singh. This portfolio shows my about section, skills, projects, and recommendations.</p>
-  </section>
+<div class="topdiv">
+    <a href="#about-me">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#recommendations">Recommendations</a>
+</div>
 
-  <section id="about">
-    <h2 class="section_title">About Me</h2>
-    <div class="about">
-      <img src="https://via.placeholder.com/300x300.png?text=Nischay+Singh" alt="Nischay Singh profile image">
-      <div class="about_text">
-        <h3>Nischay Singh</h3>
-        <p>
-          I am Nischay Singh from Bengaluru, Karnataka. I enjoy learning web development,
-          creating responsive websites, and building projects that are simple, useful, and attractive.
-        </p>
-      </div>
-    </div>
-  </section>
+</nav>
 
-  <section id="skills">
-    <h2 class="section_title">Skills</h2>
-    <div class="skills_container">
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS logo">
-        <h3>CSS</h3>
-        <p>Styling pages, layouts, and responsive design.</p>
-      </div>
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React logo">
-        <h3>React</h3>
-        <p>Building interactive user interfaces with reusable components.</p>
-      </div>
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo">
-        <h3>Bootstrap</h3>
-        <p>Creating responsive and mobile-friendly layouts quickly.</p>
-      </div>
-      <div class="skill_card">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo">
-        <h3>Python</h3>
-        <p>Writing simple programs and solving problems logically.</p>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <section id="projects">
-    <h2 class="section_title">Projects</h2>
-    <div class="projects_container">
-      <div class="project_card">
-        <h3>Travel Planner Website</h3>
-        <p>A travel planning website that helps users explore destinations and organize trips.</p>
-      </div>
-      <div class="project_card">
-        <h3>Personal Expense Tracker</h3>
-        <p>An expense tracker for managing spending, income, and monthly budgeting.</p>
-      </div>
-      <div class="project_card">
-        <h3>Recipe Finder</h3>
-        <p>A recipe search project that shows ingredients and meal ideas for users.</p>
-      </div>
-    </div>
-  </section>
+<section id="about-me">
 
-  <section id="recommendations">
-    <h2 class="section_title">Recommendations</h2>
-    <div class="recommendations_container">
-      <div class="recommendation">
-        Nischay is a dedicated learner who works hard, understands feedback well, and keeps improving his technical skills.
-      </div>
-      <div class="recommendation">
-        He is creative, responsible, and builds projects with strong attention to detail and clean structure.
-      </div>
-      <div class="recommendation">
-        Nischay shows a genuine interest in web development and is always eager to learn and apply new concepts.
-      </div>
-    </div>
-  </section>
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Profile Image">
+
+<div>
+
+<h1>
+Hi, I'm Nischay Singh 👋
+</h1>
+
+<p>
+I am a Computer Science Engineering student passionate about web development and software development. I enjoy building responsive websites using HTML, CSS, JavaScript, React, Bootstrap, and Python. I love learning new technologies and creating projects that solve real-world problems.
+</p>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2>Skills</h2>
+
+<div class="all_skills">
+
+<div class="skill">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+<h6>CSS</h6>
+<p>Responsive Web Design</p>
+</div>
+
+<div class="skill">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+<h6>Python</h6>
+<p>Programming Language</p>
+</div>
+
+<div class="skill">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+<h6>React</h6>
+<p>Frontend Library</p>
+</div>
+
+<div class="skill">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap">
+<h6>Bootstrap</h6>
+<p>Responsive Framework</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="project-card">
+<h3>Travel Planner Website</h3>
+<p>
+Developed a travel planning website that allows users to explore destinations, manage itineraries, and discover tourist attractions.
+</p>
+</div>
+
+<hr>
+
+<div class="project-card">
+<h3>Personal Expense Tracker</h3>
+<p>
+Built an expense management application to record income, expenses, monthly budgets, and generate financial summaries.
+</p>
+</div>
+
+<hr>
+
+<div class="project-card">
+<h3>Recipe Finder</h3>
+<p>
+Created a recipe finder application where users can search recipes by ingredients and cooking categories.
+</p>
+</div>
+
+</section>
+
+<section id="recommendations">
+
+<h2>Recommendations</h2>
+
+<div class="recommendation">
+"Nischay is an excellent developer who is hardworking, dedicated, and always completes his work with professionalism. He quickly learns new technologies and consistently delivers quality results."
+</div>
+
+<div class="recommendation">
+"I had the opportunity to collaborate with Nischay on multiple projects. He is an outstanding team player with strong communication skills and an excellent problem-solving mindset."
+</div>
+
+<div class="recommendation">
+"Nischay demonstrates passion for software development and continuously improves his technical skills. His commitment and positive attitude make him a valuable contributor to any team."
+</div>
+
+</section>
+
+<div class="iconbutton">
+    <a href="#home">🏠</a>
+</div>
 
 </body>
+
 </html>
