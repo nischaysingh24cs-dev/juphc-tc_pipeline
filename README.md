@@ -1,30 +1,10 @@
-# DevOps Capstone Project
+# Single Page Website
 
-![Build Status](https://github.com/nischaysingh24cs-dev/devops-capstone-project/actions/workflows/ci-build.yaml/badge.svg)
-
-## Project Overview
-This is the sample microservice application for the DevOps Capstone Project. It provides a RESTful web service to manage accounts with automated testing and Continuous Integration (CI).
-
----
-
-### Core Account Model:
-* **id:** Unique identifier.
-* **name:** Account holder's name.
-* **email:** Associated contact email.
-* **type:** Account category (Savings or Checking).
-* **balance:** Available balance.
-
----
-
-### Implementation Details:
-The microservice is fully compliant with the following operations:
-1. **CREATE:** Create a new account in the service database.
-2. **READ:** Fetch account details using an ID.
-3. **UPDATE:** Modify account details on the fly.
-4. **DELETE:** Delete accounts securely from the registry.
-5. **LIST:** List all active accounts in the service.
-
----
-
-### Automated Validation (CI/CD)
-Every code change triggered by a push event is automatically run against static code checking (`flake8`) and unit tests (`nosetests` via `pynose`) to guarantee 100% deployment integrity.
+> I applied HTML, CSS, and JavaScript to design a single-page website that showcases some of my skills, recommendations, and bio. 
+  This website was created as a final lab assignment for the Introduction to Web Development with HTML, CSS, JavaScript course offered by IBM 
+  (which is course 2 of the IBM Full Stack Developer Professional Certification Program).
+  
+  Deployed website link ---> https://virtual-resume.netlify.app
+  
+  
+  [![Netlify Status](https://api.netlify.com/api/v1/badges/4fe13f9b-c570-4b0c-b2f3-0d2e9c357a33/deploy-status)](https://app.netlify.com/sites/solo-web-page/deploys)
